@@ -12,7 +12,7 @@ function App() {
       <div className="flex-1 flex flex-col h-screen ">
         <ScrollToTop />
         <NavComponent />
-        <div className="flex-1 pt-3 pl-3 overflow-y-scroll">
+        <div className="flex-1 pt-3 px-3 overflow-y-scroll">
           <Outlet />
         </div>
         <Footer />

@@ -2,11 +2,12 @@ import { dashboardHeaders } from "../Data/dummyData";
 import { CollapsibleSection } from "./export_components";
 import { NavLink } from "react-router-dom";
 const SideBar = () => {
+	
   return (
-    <aside className="group max-lg:w-16 w-72 bg-bgColor h-full top-0 left-0 px-2 flex flex-col gap-10 pt-5  transition-all duration-300 hover:max-lg:w-72 max-lg:hover:fixed">
+    <aside className="group max-sm:hidden max-lg:w-16 w-72 bg-bgColor h-full top-0 left-0 px-2 flex flex-col gap-10 pt-5  transition-all duration-300 hover:max-lg:w-72 max-lg:hover:fixed">
       {/* logo */}
       <div className="flex justify-center mx-2">
-        <h1 className="text-3xl  font-extrabold text-primary hidden group-hover:block">
+        <h1 className="text-3xl  font-extrabold text-primary hidden lg:block group-hover:block">
           DASHBOARD
         </h1>
         <h1 className="text-xl font-extrabold text-primary lg:hidden group-hover:hidden">DB</h1>

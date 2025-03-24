@@ -2,6 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.tsx";
+import { DashboardProvider } from "./provider/DasboardProvider.tsx";
 import {
   ProjectPage,
   NotFoundPage,
@@ -23,6 +24,8 @@ const router = createBrowserRouter([
 ]);
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <DashboardProvider>
+      <RouterProvider router={router} />
+    </DashboardProvider>
   </StrictMode>
 );
