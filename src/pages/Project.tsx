@@ -37,7 +37,9 @@ const Project = () => {
         {/* 2 */}
         <div className="bg-blue-500 h-[450px]"></div>
         {/* 3*/}
-        <div className="bg-pink-500 h-[450px]"></div>
+        <div className="bg-pink-500 h-[450px]">
+         
+        </div>
         {/* 4 */}
         <div className="bg-green-500 h-[500px]"></div>
         {/* 5 */}
