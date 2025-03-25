@@ -1,6 +1,6 @@
 
 
-const HomePage = () => {
+const Project = () => {
   return (
     <div className="w-full h-full bg-blue-600 ">
       project
@@ -8,4 +8,4 @@ const HomePage = () => {
   )
 }
 
-export default HomePage
+export default Project;

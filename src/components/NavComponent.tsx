@@ -3,13 +3,30 @@ import { IoIosSearch } from "react-icons/io";
 import { PiShoppingCartSimpleLight } from "react-icons/pi";
 import { CiLight } from "react-icons/ci";
 import { PiBellSimpleLight } from "react-icons/pi";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { AnimatePresence, motion } from "motion/react";
 import { dashboardHeaders } from "../Data/dummyData";
 
 const NavComponent = () => {
   const [isMenu, setIsMenu] = useState<boolean>(false);
+  // Disable menu on screen resize (sm and larger)
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 640) {
+        setIsMenu(false);
+      }
+    };
+
+    // Check on mount and add event listener
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup event listener
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  //menu click
   const handleMenuClick = () => {
     setIsMenu((prev) => !prev);
   };
@@ -29,9 +46,11 @@ const NavComponent = () => {
             exit="hidden"
             className="absolute left-0 top-14 bg-white shadow-sm h-fit w-full  py-5  sm:hidden">
             {/* navigation link */}
-            <div onClick={handleMenuClick} className="flex flex-col gap-5">
+            <div
+              onClick={handleMenuClick}
+              className="flex flex-col gap-y-5 pl-4 text-textColor">
               {dashboardHeaders.map((dashboardHeader, index) => (
-                <div key={index} className="pl-4 flex flex-col text-textColor">
+                <div key={index} className="flex flex-col gap-y-5">
                   {dashboardHeader.links.map((link, linkIndex) => (
                     <NavLink
                       key={linkIndex}
@@ -39,7 +58,7 @@ const NavComponent = () => {
                       className={({ isActive }) =>
                         isActive ? "text-primary" : "text-textColor"
                       }>
-                      <h1 className="mt-3">{link.name}</h1>
+                      <h1 className="text-2xl">{link.name}</h1>
                     </NavLink>
                   ))}
                 </div>
