@@ -3,7 +3,7 @@ const Project = () => {
     <div className="w-full h-full flex flex-col overflow-auto [&::-webkit-scrollbar]:hidden">
       <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-2">
         {/* 1 */}
-        <div className="h-[900px] lg:h-[430px] grid grid-cols-1 lg:grid-cols-2 gap-2">
+        <div className="h-[900px] lg:h-[450px] grid grid-cols-1 lg:grid-cols-2 gap-2">
           <div className="w-full h-full border-2 border-dashed border-primary rounded-3xl flex flex-col justify-between p-3">
             <div className="flex flex-col gap-3">
               <h1 className="text-textColor text-2xl ">Total hours</h1>
@@ -43,9 +43,9 @@ const Project = () => {
         {/* 4 */}
         <div className="bg-green-500 h-[500px]"></div>
         {/* 5 */}
-        <div className="bg-yellow-500 h-[500px]"></div>
+        <div className="bg-yellow-500 h-[500px] col-span-2"></div>
         {/* 6 */}
-        <div className="bg-violet-500 h-[500px]"></div>
+    
       </div>
     </div>
   );
