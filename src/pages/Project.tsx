@@ -41,9 +41,9 @@ const Project = () => {
          
         </div>
         {/* 4 */}
-        <div className="bg-green-500 h-[500px]"></div>
+        <div className="bg-green-500 h-[450px]"></div>
         {/* 5 */}
-        <div className="bg-yellow-500 h-[500px] col-span-2"></div>
+        <div className="bg-yellow-500 h-[450px] lg:col-span-2"></div>
         {/* 6 */}
     
       </div>
