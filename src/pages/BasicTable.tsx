@@ -62,7 +62,7 @@ const BasicTable = () => {
             value={search}
             placeholder="search.."
             onChange={(e) => setSearch(e.target.value)}
-            className="h-8 w-52 rounded border border-gray  focus:outline-primary text-sm my-2"
+            className="h-8 w-52 rounded border border-gray  focus:outline-primary text-sm px-2"
           />
         </div>
       </div>

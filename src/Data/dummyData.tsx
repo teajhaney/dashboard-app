@@ -144,3 +144,119 @@ export const allCustomers: Customer[] = [
     spent: 390.75,
   },
 ];
+
+//data table
+
+export interface Staffs {
+  id: number;
+  name: string;
+  position: string;
+  office: string;
+  age: number;
+  startDate: string;
+  salary: number;
+  active: boolean;
+}
+
+export const Alltaffs: Staffs[] = [
+  {
+    id: 1,
+    name: "Alice Johnson",
+    position: "Manager",
+    office: "New York",
+    age: 35,
+    startDate: "2015-06-12",
+    salary: 75000,
+    active: true,
+  },
+  {
+    id: 2,
+    name: "Bob Smith",
+    position: "Software Engineer",
+    office: "San Francisco",
+    age: 28,
+    startDate: "2018-09-25",
+    salary: 95000,
+    active: true,
+  },
+  {
+    id: 3,
+    name: "Charlie Brown",
+    position: "Product Designer",
+    office: "Los Angeles",
+    age: 31,
+    startDate: "2017-04-18",
+    salary: 87000,
+    active: false,
+  },
+  {
+    id: 4,
+    name: "David Wilson",
+    position: "Data Analyst",
+    office: "Chicago",
+    age: 29,
+    startDate: "2020-11-10",
+    salary: 72000,
+    active: true,
+  },
+  {
+    id: 5,
+    name: "Emma Davis",
+    position: "HR Specialist",
+    office: "Boston",
+    age: 42,
+    startDate: "2012-03-05",
+    salary: 68000,
+    active: false,
+  },
+  {
+    id: 6,
+    name: "Frank Martin",
+    position: "Marketing Lead",
+    office: "Seattle",
+    age: 38,
+    startDate: "2014-07-22",
+    salary: 81000,
+    active: true,
+  },
+  {
+    id: 7,
+    name: "Grace Lee",
+    position: "DevOps Engineer",
+    office: "Austin",
+    age: 33,
+    startDate: "2016-10-15",
+    salary: 98000,
+    active: true,
+  },
+  {
+    id: 8,
+    name: "Henry Clark",
+    position: "Sales Executive",
+    office: "Denver",
+    age: 40,
+    startDate: "2013-12-30",
+    salary: 72000,
+    active: false,
+  },
+  {
+    id: 9,
+    name: "Ivy Walker",
+    position: "UX Researcher",
+    office: "San Diego",
+    age: 27,
+    startDate: "2021-08-08",
+    salary: 77000,
+    active: true,
+  },
+  {
+    id: 10,
+    name: "Jack Robinson",
+    position: "Finance Analyst",
+    office: "Dallas",
+    age: 36,
+    startDate: "2015-02-14",
+    salary: 89000,
+    active: false,
+  },
+];
