@@ -128,7 +128,7 @@ const DataTable = () => {
                   <td className={tBodyStyles}>{staff.name}</td>
                   <td
                     className={`${tBodyStyles}  ${
-                      staff.active === true ? "text-green" : "text-gray"
+                      staff.active === true ? "text-green" : "text-gray/50"
                     }`}>
                     {staff.position}
                   </td>
