@@ -147,7 +147,7 @@ export const allCustomers: Customer[] = [
 
 //data table
 
-export interface Staffs {
+export interface Staff {
   id: number;
   name: string;
   position: string;
@@ -158,7 +158,7 @@ export interface Staffs {
   active: boolean;
 }
 
-export const Alltaffs: Staffs[] = [
+export const Alltaffs: Staff[] = [
   {
     id: 1,
     name: "Alice Johnson",

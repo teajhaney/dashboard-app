@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import { CiEdit } from "react-icons/ci";
 import { LiaTrashAlt } from "react-icons/lia";
 import { NavLink } from "react-router-dom";
-import { Alltaffs, Staffs } from "../Data/dummyData";
+import { Alltaffs, Staff } from "../Data/dummyData";
+import { StaffEditModal } from "../components/export_components";
 
 const DataTable = () => {
-  const [staffs, setStaffs] = useState<Staffs[]>(Alltaffs);
+  const [staffs, setStaffs] = useState<Staff[]>(Alltaffs);
   const [search, setSearch] = useState("");
-  const [debaounedSearch, setDebaouncedSearch] = useState("");
+ const [debouncedSearch, setDebouncedSearch] = useState(""); 
+  const [editingStaff, setEditingStaff] = useState<Staff | null>(null); // Track staff being edited
 
   // Delete customer
   const handleDelete = (id: number) => {
@@ -15,28 +17,42 @@ const DataTable = () => {
   };
 
   // Edit customer (placeholder)
-  const handleEdit = (id: number) => {
-    console.log(id);
+  const handleEdit = (staff: Staff) => {
+    setEditingStaff(staff);
+  };
+  //save edited customer
+  const handleSave = (updatedStaff: Staff) => {
+    setStaffs(
+      staffs.map((staff) =>
+        staff.id === updatedStaff.id ? updatedStaff : staff
+      )
+	);
+	    setEditingStaff(null);
+  };
+
+  //close modal without saving
+  const handleClose = () => {
+    setEditingStaff(null);
   };
 
   useEffect(() => {
     const handler = setTimeout(() => {
-      setDebaouncedSearch(search);
+      setDebouncedSearch(search);
     }, 500);
     return () => clearTimeout(handler);
   }, [search]);
 
   //filter customer
-  const filteredStaffs: Staffs[] = staffs.filter(
+  const filteredStaffs: Staff[] = staffs.filter(
     (customer) =>
-      customer.name.toLowerCase().includes(debaounedSearch.toLowerCase()) ||
-      customer.position.toLowerCase().includes(debaounedSearch.toLowerCase()) ||
-      customer.office.toLowerCase().includes(debaounedSearch.toLowerCase()) ||
+      customer.name.toLowerCase().includes(debouncedSearch.toLowerCase()) ||
+      customer.position.toLowerCase().includes(debouncedSearch.toLowerCase()) ||
+      customer.office.toLowerCase().includes(debouncedSearch.toLowerCase()) ||
       customer.startDate
         .toLowerCase()
-        .includes(debaounedSearch.toLowerCase()) ||
-      customer.age === Number(debaounedSearch) ||
-      customer.salary === Number(debaounedSearch)
+        .includes(debouncedSearch.toLowerCase()) ||
+      customer.age === Number(debouncedSearch) ||
+      customer.salary === Number(debouncedSearch)
   );
 
   const tHeadStyles: string =
@@ -109,7 +125,7 @@ const DataTable = () => {
                   <div className="bg-blue-100 p-2 rounded cursor-pointer">
                     {" "}
                     <CiEdit
-                      onClick={() => handleEdit(staff.id)}
+                      onClick={() => handleEdit(staff)}
                       className="text-lightBlue text-xl hover:text-darkBlue "
                     />
                   </div>
@@ -125,6 +141,14 @@ const DataTable = () => {
           </tbody>
         </table>
       </div>
+      {/* Edit Modal */}
+      {editingStaff && (
+        <StaffEditModal
+          staff={editingStaff}
+          onSave={handleSave}
+          onClose={handleClose}
+        />
+      )}
     </div>
   );
 };

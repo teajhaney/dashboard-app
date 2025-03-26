@@ -3,25 +3,51 @@ import { CiEdit } from "react-icons/ci";
 import { LiaTrashAlt } from "react-icons/lia";
 import { NavLink } from "react-router-dom";
 import { allCustomers, Customer } from "../Data/dummyData";
+import { CustomerEditModal } from "../components/export_components";
+// import { IoIosAddCircleOutline } from "react-icons/io";
 
 const BasicTable = () => {
   const [customers, setCustomers] = useState<Customer[]>(allCustomers);
   const [search, setSearch] = useState("");
-  const [debaounedSearch, setDebaouncedSearch] = useState("");
+  const [debouncedSearch, setDebouncedSearch] = useState("");
+  const [editingCustomer, setEditingCustomer] = useState<Customer | null>(null); // Track customer being edited
 
   // Delete customer
   const handleDelete = (id: number) => {
     setCustomers(customers.filter((customer) => customer.id !== id));
   };
+  // Open edit modal
+  const handleEdit = (customer: Customer) => {
+    setEditingCustomer(customer);
+  };
 
-  // Edit customer (placeholder)
-  const handleEdit = (id: number) => {
-    console.log(id);
+  // Save edited customer
+  //   const handleSave = (updatedCustomer: Customer) => {
+  //     setCustomers(
+  //       customers.map((customer) =>
+  //         customer.id === updatedCustomer.id ? updatedCustomer : customer
+  //       )
+  //     );
+  //     setEditingCustomer(null); // Close modal
+
+  //   };
+  const handleSave = (updatedCustomer: Customer) => {
+    setCustomers(
+      customers.map((customer) =>
+        customer.id === updatedCustomer.id ? updatedCustomer : customer
+      )
+    );
+    setEditingCustomer(null);
+  };
+
+  // Close modal without saving
+  const handleClose = () => {
+    setEditingCustomer(null);
   };
 
   useEffect(() => {
     const handler = setTimeout(() => {
-      setDebaouncedSearch(search);
+      setDebouncedSearch(search);
     }, 500);
     return () => clearTimeout(handler);
   }, [search]);
@@ -29,11 +55,11 @@ const BasicTable = () => {
   //filter customer
   const filteredCustomers: Customer[] = customers.filter(
     (customer) =>
-      customer.name.toLowerCase().includes(debaounedSearch.toLowerCase()) ||
-      customer.email.toLowerCase().includes(debaounedSearch.toLowerCase()) ||
-      customer.status.toLowerCase().includes(debaounedSearch.toLowerCase()) ||
-      customer.orders === Number(debaounedSearch) ||
-      customer.spent === Number(debaounedSearch)
+      customer.name.toLowerCase().includes(debouncedSearch.toLowerCase()) ||
+      customer.email.toLowerCase().includes(debouncedSearch.toLowerCase()) ||
+      customer.status.toLowerCase().includes(debouncedSearch.toLowerCase()) ||
+      customer.orders === Number(debouncedSearch) ||
+      customer.spent === Number(debouncedSearch)
   );
 
   const tHeadStyles: string =
@@ -101,7 +127,7 @@ const BasicTable = () => {
                 <td className={tBodyStyles}>${customer.spent.toFixed(2)}</td>
                 <td className={`${tBodyStyles} flex gap-5 cursor-pointer`}>
                   <CiEdit
-                    onClick={() => handleEdit(customer.id)}
+                    onClick={() => handleEdit(customer)}
                     className="text-lightBlue hover:text-darkBlue"
                   />
                   <LiaTrashAlt
@@ -114,6 +140,14 @@ const BasicTable = () => {
           </tbody>
         </table>
       </div>
+      {/* Edit Modal */}
+      {editingCustomer && (
+        <CustomerEditModal
+          customer={editingCustomer}
+          onSave={handleSave}
+          onClose={handleClose}
+        />
+      )}
     </div>
   );
 };
