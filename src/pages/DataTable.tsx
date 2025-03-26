@@ -8,7 +8,7 @@ import { StaffEditModal } from "../components/export_components";
 const DataTable = () => {
   const [staffs, setStaffs] = useState<Staff[]>(Alltaffs);
   const [search, setSearch] = useState("");
- const [debouncedSearch, setDebouncedSearch] = useState(""); 
+  const [debouncedSearch, setDebouncedSearch] = useState("");
   const [editingStaff, setEditingStaff] = useState<Staff | null>(null); // Track staff being edited
 
   // Delete customer
@@ -26,8 +26,8 @@ const DataTable = () => {
       staffs.map((staff) =>
         staff.id === updatedStaff.id ? updatedStaff : staff
       )
-	);
-	    setEditingStaff(null);
+    );
+    setEditingStaff(null);
   };
 
   //close modal without saving
@@ -107,14 +107,11 @@ const DataTable = () => {
                 key={staff.id}
                 className="border-b border-gray-300 hover:bg-gray-100 transition-all odd:bg-gray-100">
                 <td className={tBodyStyles}>{staff.name}</td>
-                <td className={tBodyStyles}>
-                  {" "}
-                  <span
-                    className={`px-2 py-1 rounded text-white ${
-                      staff.active === true ? "bg-green-400" : "bg-gray-400"
-                    }`}>
-                    {staff.position}
-                  </span>
+                <td
+                  className={`${tBodyStyles}  ${
+                    staff.active === true ? "text-green" : "text-gray"
+                  }`}>
+                  {staff.position}
                 </td>
                 <td className={tBodyStyles}>{staff.office}</td>
 

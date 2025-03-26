@@ -44,7 +44,7 @@ const CustomerEditModal = ({
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full p-2 border border-gray rounded-md"
+              className="w-full p-2 border border-gray  focus:outline-primary rounded-md"
             />
           </div>
           <div className="mb-4">
@@ -56,7 +56,7 @@ const CustomerEditModal = ({
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full p-2 border border-gray rounded-md"
+              className="w-full p-2 border border-gray  focus:outline-primary rounded-md"
             />
           </div>
           <div className="mb-4">
@@ -67,7 +67,7 @@ const CustomerEditModal = ({
               name="status"
               value={formData.status}
               onChange={handleChange}
-              className="w-full p-2 border border-gray rounded-md">
+              className="w-full p-2 border border-gray  focus:outline-primary rounded-md">
               <option value="Active">Active</option>
               <option value="Inactive">Inactive</option>
             </select>
@@ -82,7 +82,7 @@ const CustomerEditModal = ({
               name="orders"
               value={formData.orders}
               onChange={handleChange}
-              className="w-full p-2 border border-gray rounded-md"
+              className="w-full p-2 border border-gray  focus:outline-primary rounded-md"
             />
           </div>
           <div className="mb-4">
@@ -95,7 +95,7 @@ const CustomerEditModal = ({
               name="spent"
               value={formData.spent}
               onChange={handleChange}
-              className="w-full p-2 border border-gray rounded-md"
+              className="w-full p-2 border border-gray  focus:outline-primary rounded-md"
             />
           </div>
           <div className="flex space-x-2">

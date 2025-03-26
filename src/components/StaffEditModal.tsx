@@ -40,7 +40,7 @@ const StaffEditModal = ({ staff, onSave, onClose }: StaffEditModalProps) => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full p-2 border border-gray rounded-md"
+              className="w-full p-2 border border-gray  focus:outline-primary rounded-md"
             />
           </div>
           <div className="mb-4">
@@ -52,7 +52,7 @@ const StaffEditModal = ({ staff, onSave, onClose }: StaffEditModalProps) => {
               name="position"
               value={formData.position}
               onChange={handleChange}
-              className="w-full p-2 border border-gray rounded-md"
+              className="w-full p-2 border border-gray  focus:outline-primary rounded-md"
             />
           </div>
           <div className="mb-4">
@@ -64,7 +64,7 @@ const StaffEditModal = ({ staff, onSave, onClose }: StaffEditModalProps) => {
               name="office"
               value={formData.office}
               onChange={handleChange}
-              className="w-full p-2 border border-gray rounded-md"
+              className="w-full p-2 border border-gray  focus:outline-primary rounded-md"
             />
           </div>
           <div className="mb-4">
@@ -76,7 +76,7 @@ const StaffEditModal = ({ staff, onSave, onClose }: StaffEditModalProps) => {
               name="age"
               value={formData.age}
               onChange={handleChange}
-              className="w-full p-2 border border-gray rounded-md"
+              className="w-full p-2 border border-gray  focus:outline-primary rounded-md"
             />
           </div>
 
@@ -89,7 +89,7 @@ const StaffEditModal = ({ staff, onSave, onClose }: StaffEditModalProps) => {
               name="startDate"
               value={formData.startDate}
               onChange={handleChange}
-              className="w-full p-2 border border-gray rounded-md"
+              className="w-full p-2 border border-gray  focus:outline-primary rounded-md"
             />
           </div>
           <div className="mb-4">
@@ -102,7 +102,7 @@ const StaffEditModal = ({ staff, onSave, onClose }: StaffEditModalProps) => {
               name="salary"
               value={formData.salary}
               onChange={handleChange}
-              className="w-full p-2 border border-gray rounded-md"
+              className="w-full p-2 border border-gray  focus:outline-primary rounded-md"
             />
           </div>
           <div className="flex space-x-2">
