@@ -53,7 +53,7 @@ const EcommercePage = () => {
             />
           </div>
           <h1 className="text-center">Thank you</h1>
-          <h1 className="text-green-500 text-center text-2xl">
+          <h1 className="text-green text-center text-2xl">
             Transaction was successful
 				  </h1>
 				  <hr className="border-t border-dashed"/>

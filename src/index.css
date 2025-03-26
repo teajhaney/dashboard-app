@@ -7,8 +7,13 @@
   --color-bgColor: #ffffff;
   --color-bgColor2: #f6f6f6;
   --color-textHead: #231186;
-  --color-textColor2: #0A3C7F;
-  --color-accents2: #BBC8F2;
-  --color-green:#B8D1BC;
-  --color-lemon:#EDEEC4;
+  --color-textColor2: #0a3c7f;
+  --color-accents2: #bbc8f2;
+  --color-green: #22C55E;
+  --color-lemon: #edeec4;
+  --color-lightRed: #ef4444;
+  --color-darkRed: #b91c1c;
+  --color-darkBlue: #1d4ed8;
+  --color-lightBlue: #3b82f6;
+  --color-gray: #374151;
 }
