@@ -10,7 +10,7 @@ import {
   BasicTable,
   DataTable,
   LineChart,
-  AreaChart,
+
   BarChart,
   PieChart,
 } from "./pages/export_pages.tsx";
@@ -38,10 +38,7 @@ const router = createBrowserRouter([
         element: <LineChart />,
       },
 
-      {
-        path: "/area-chart",
-        element: <AreaChart />,
-      },
+   
       {
         path: "/bar-chart",
         element: <BarChart />,

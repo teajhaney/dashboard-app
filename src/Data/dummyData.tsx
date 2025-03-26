@@ -37,10 +37,7 @@ export const dashboardHeaders = [
         name: "Line chart",
         path: "/line-chart",
       },
-      {
-        name: "Area chart",
-        path: "/area-chart",
-      },
+    
       {
         name: "Bar chart",
         path: "/bar-chart",

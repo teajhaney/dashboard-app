@@ -1,7 +1,7 @@
 import { CgMenuGridO } from "react-icons/cg";
 import { IoIosSearch } from "react-icons/io";
 import { PiShoppingCartSimpleLight } from "react-icons/pi";
-import { CiLight } from "react-icons/ci";
+
 import { PiBellSimpleLight } from "react-icons/pi";
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
@@ -75,7 +75,7 @@ const NavComponent = () => {
 
       <div className="flex gap-2 text-3xl">
         <IoIosSearch />
-        <CiLight />
+      
         <PiShoppingCartSimpleLight />
         <PiBellSimpleLight />
       </div>
