@@ -37,7 +37,7 @@ export const dashboardHeaders = [
         name: "Line chart",
         path: "/line-chart",
       },
-    
+
       {
         name: "Bar chart",
         path: "/bar-chart",
@@ -1978,5 +1978,38 @@ export const AllStaffs: Staff[] = [
     startDate: "2017-12-28",
     salary: 89000,
     active: true,
+  },
+];
+
+export interface SalesBycountry {
+  country: string;
+  products: number;
+  countryImg: string;
+}
+
+export const SalesByCountries: SalesBycountry[] = [
+  {
+    country: "Germany",
+    products: 4.4,
+    countryImg:
+      "https://www.countryflags.com/wp-content/uploads/germany-flag-png-large.png",
+  },
+  {
+    country: "France",
+    products: 4.4,
+    countryImg:
+      "https://cdn.countryflags.com/thumbs/france/flag-square-500.png",
+  },
+  {
+    country: "Belguim",
+    products: 4.4,
+    countryImg:
+      "https://cdn.countryflags.com/thumbs/belgium/flag-square-500.png",
+  },
+  {
+    country: "Korea",
+    products: 4.4,
+    countryImg:
+      "https://cdn.countryflags.com/thumbs/south-korea/flag-square-500.png",
   },
 ];

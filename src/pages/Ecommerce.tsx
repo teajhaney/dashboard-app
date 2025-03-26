@@ -1,3 +1,5 @@
+import { SalesByCountries} from "../Data/dummyData";
+
 const EcommercePage = () => {
   return (
     <div className="w-full h-full flex flex-col overflow-auto [&::-webkit-scrollbar]:hidden">
@@ -41,9 +43,17 @@ const EcommercePage = () => {
         {/* 4 */}
         <div className="bg-green-500 h-[500px]"></div>
         {/* 5 */}
-        <div className="bg-yellow-500 h-[500px]"></div>
+        <div className=" h-[500px] grid grid-cols-1 lg:grid-cols-2 gap-5">
+          {SalesByCountries.map((SalesByCountry) => (
+			  <div className="border border-gray/20 rounded-lg bg-white flex flex-col gap-5 p-5">
+				  <img src={SalesByCountry.countryImg} alt={SalesByCountry.country} className="h-25 w-30 rounded-2xl"/>
+				  <h1>{SalesByCountry.country}</h1>
+				  <h1 className="font-bold text-2xl">{SalesByCountry.products}k <span className="text-gray/20 text-sm">products</span></h1>
+            </div>
+          ))}
+        </div>
         {/* 6 */}
-        <div className="rounded-[50px] h-[500px] flex flex-col justify-center gap-5 p-5 bg-white ">
+        <div className="rounded-3xl h-[500px] flex flex-col justify-center gap-5 p-5 bg-white ">
           <div className="flex justify-center">
             {" "}
             <img
@@ -55,8 +65,8 @@ const EcommercePage = () => {
           <h1 className="text-center">Thank you</h1>
           <h1 className="text-green text-center text-2xl">
             Transaction was successful
-				  </h1>
-				  <hr className="border-t border-dashed"/>
+          </h1>
+          <hr className="border-t border-dashed" />
           <div className="flex justify-between">
             <div className="flex flex-col ">
               <h1>Transaction ID</h1>
