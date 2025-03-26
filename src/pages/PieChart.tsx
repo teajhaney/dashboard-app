@@ -112,13 +112,13 @@ const PieChart = () => {
         </NavLink>
       </h1>
     <div className="flex flex-col  gap-5   items-center justify-center">
-      <div className="bg-white shadow-md w-full max-w-xl lg:max-w-4xl p-4 flex justify-center items-center">
-        <div className="relative w-full h-[300px] md:h-[400px]">
+      <div className="bg-white shadow-md w-full max-w-xl  p-4 flex justify-center items-center">
+        <div className=" w-full h-[300px] md:h-[400px]">
           <Pie data={data} options={options} />
         </div>
       </div>
-      <div className="bg-white shadow-md w-full max-w-xl lg:max-w-4xl p-4 flex  justify-center items-center">
-        <div className="relative w-full h-[300px] md:h-[400px]">
+      <div className="bg-white shadow-md w-full max-w-xl p-4 flex  justify-center items-center">
+        <div className=" w-full h-[300px] md:h-[400px]">
           <Doughnut data={dataDoughnut} options={optionsDoughnut} />
         </div>
       </div>
