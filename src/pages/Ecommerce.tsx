@@ -3,7 +3,7 @@ import { growths, SalesByCountries } from "../Data/dummyData";
 const EcommercePage = () => {
   return (
     <div className="w-full h-full flex flex-col overflow-auto [&::-webkit-scrollbar]:hidden">
-      <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-2">
+      <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-5">
         {/* 1 */}
         <div className="h-[900px] lg:h-[430px] grid grid-cols-1 lg:grid-cols-2 gap-3">
           <div className="w-full h-full border-2 border-dashed border-primary rounded-3xl flex flex-col gap-3  p-3">
@@ -53,10 +53,7 @@ const EcommercePage = () => {
             </div>
           ))}
         </div>
-        {/* 2 */}
-        <div className="bg-blue-500 h-[450px]"></div>
-        {/* 3*/}
-        <div className="bg-pink-500 h-[450px]"></div>
+
         {/* 5 */}
         <div className=" h-[900px] lg:h-[430px] grid grid-cols-1 lg:grid-cols-2 gap-5">
           {SalesByCountries.map((SalesByCountry) => (
@@ -75,7 +72,7 @@ const EcommercePage = () => {
           ))}
         </div>
         {/* 6 */}
-        <div className="rounded-3xl h-[900px] lg:h-[430px] flex flex-col justify-center gap-5 p-5 bg-white ">
+        <div className="rounded-3xl h-[900px] lg:h-[430px] flex flex-col justify-center gap-2 p-5 bg-white ">
           <div className="flex justify-center">
             {" "}
             <img
@@ -101,9 +98,13 @@ const EcommercePage = () => {
           </div>
           <div className="flex flex-col ">
             <h1>Date & Time</h1>
-            <h1 className="font-bold text-2xl">15 Jun 2024 • 6:90PM</h1>
+            <h1 className="font-bold text-xl">15 Jun 2024 • 6:90PM</h1>
           </div>
         </div>
+        {/* 2 */}
+        <div className="bg-blue-500  h-[900px] lg:h-[430px]"></div>
+        {/* 3*/}
+        <div className="bg-pink-500  h-[900px] lg:h-[430px]"></div>
       </div>
     </div>
   );
