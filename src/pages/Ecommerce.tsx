@@ -1,6 +1,67 @@
 import { growths, SalesByCountries } from "../Data/dummyData";
+import { Line } from "react-chartjs-2";
+import { reveneuData } from "../Data/chartData";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  ChartOptions,
+} from "chart.js";
 
-const EcommercePage = () => {
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
+const data = {
+  labels: reveneuData.map((reveneu) => reveneu.label),
+
+  datasets: [
+    {
+      label: "Revenue",
+      data: reveneuData.map((reveneu) => reveneu.cost),
+      fill: true,
+      backgroundColor: [
+        "rgba(255, 99, 132, 0.5)",
+        "rgba(54, 162, 235, 0.5)",
+        "rgba(255, 206, 86, 0.5)",
+        "rgba(75, 192, 192, 0.5)",
+        "rgba(153, 102, 255, 0.5)",
+        "rgba(255, 159, 64, 0.5)",
+      ],
+      borderColor: [
+        "rgba(255, 99, 132, 1)",
+        "rgba(54, 162, 235, 1)",
+        "rgba(255, 206, 86, 1)",
+        "rgba(75, 192, 192, 1)",
+        "rgba(153, 102, 255, 1)",
+        "rgba(255, 159, 64, 1)",
+      ],
+      borderWidth: 1,
+      tension: 0.4,
+    },
+  ],
+};
+
+const options: ChartOptions<"line"> = {
+  responsive: true,
+  maintainAspectRatio: false,
+  plugins: {
+    legend: { position: "top" },
+    title: { display: true, text: "Monthly Sales" },
+  },
+};
+const Ecommerce = () => {
   return (
     <div className="w-full h-full flex flex-col overflow-auto [&::-webkit-scrollbar]:hidden">
       <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-5">
@@ -37,7 +98,7 @@ const EcommercePage = () => {
           </div>
         </div>
 
-        {/* 4 */}
+        {/* 2*/}
         <div className="-500 h-[900px] lg:h-[430px] grid grid-cols-1 lg:grid-cols-2 gap-5">
           {growths.map((growth) => (
             <div className="border border-gray/20 rounded-lg bg-white flex flex-col justify-center items-center gap-3 p-5">
@@ -54,7 +115,7 @@ const EcommercePage = () => {
           ))}
         </div>
 
-        {/* 5 */}
+        {/* 3 */}
         <div className=" h-[900px] lg:h-[430px] grid grid-cols-1 lg:grid-cols-2 gap-5 ">
           {SalesByCountries.map((SalesByCountry) => (
             <div className="border border-gray/20 rounded-lg bg-white flex flex-col gap-3 p-5 max-lg:items-center">
@@ -71,7 +132,7 @@ const EcommercePage = () => {
             </div>
           ))}
         </div>
-        {/* 6 */}
+        {/* 4 */}
         <div className="rounded-3xl h-[430px] flex flex-col justify-center gap-2 p-5 bg-white ">
           <div className="flex justify-center">
             {" "}
@@ -101,12 +162,18 @@ const EcommercePage = () => {
             <h1 className="font-bold text-xl">15 Jun 2024 • 6:90PM</h1>
           </div>
         </div>
-        {/* 2 */}
-        <div className="bg-blue-500  h-[430px] lg:col-span-2"></div>
-  
+        {/* 5 */}
+        <div className="w-full  h-[430px] lg:col-span-2">
+          <div className="bg-white shadow-md w-full p-4">
+            <div className="relative w-full h-[300px] md:h-[400px]">
+              {" "}
+              <Line data={data} options={options} />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
-export default EcommercePage;
+export default Ecommerce;

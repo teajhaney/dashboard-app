@@ -11,7 +11,7 @@ export const dashboardHeaders = [
     //   },
       {
         name: "Ecommerce",
-        path: "/Ecommerce",
+        path: "/",
       },
     ],
   },
