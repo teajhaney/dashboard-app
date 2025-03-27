@@ -5,10 +5,10 @@ export const dashboardHeaders = [
     title: "Dashboard",
     icon: <RiHome9Line />,
     links: [
-      {
-        name: "Project",
-        path: "/",
-      },
+    //   {
+    //     name: "Project",
+    //     path: "/",
+    //   },
       {
         name: "Ecommerce",
         path: "/Ecommerce",
@@ -2011,5 +2011,34 @@ export const SalesByCountries: SalesBycountry[] = [
     products: 4.4,
     countryImg:
       "https://cdn.countryflags.com/thumbs/south-korea/flag-square-500.png",
+  },
+];
+
+export interface Growth {
+  amount: string;
+  label: string;
+  image: string;
+}
+
+export const growths: Growth[] = [
+  {
+    amount: "22,69852",
+    label: "Earn this month",
+    image: "/growth-graph.png",
+  },
+  {
+    amount: "$5,84,230",
+    label: "Earn growth 33%",
+    image: "/earn-money.png",
+  },
+  {
+    amount: "69.8%",
+    label: "Conversion rate",
+    image: "/conversion.png",
+  },
+  {
+    amount: "36.6%",
+    label: "Growth profit margib",
+    image: "/money-bag.png",
   },
 ];

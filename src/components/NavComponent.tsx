@@ -35,7 +35,7 @@ const NavComponent = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }, // Slide in smoothly
   };
   return (
-    <div className="relative h-16 z-50 p-3 flex max-sm:justify-between sm:justify-end tems-center text-textColor">
+    <div className="relative h-16 z-50 p-3 flex max-sm:justify-between sm:justify-end tems-center text-textColor shadow-[10px_10px_50px_-30px_rgb(0,0,0,0.25)] ">
       <AnimatePresence>
         {isMenu && (
           <motion.div
@@ -75,7 +75,7 @@ const NavComponent = () => {
 
       <div className="flex gap-2 text-3xl">
         <IoIosSearch />
-      
+
         <PiShoppingCartSimpleLight />
         <PiBellSimpleLight />
       </div>
