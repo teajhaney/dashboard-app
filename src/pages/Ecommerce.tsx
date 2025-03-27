@@ -63,7 +63,7 @@ const options: ChartOptions<"line"> = {
 };
 const Ecommerce = () => {
   return (
-    <div className="w-full h-full flex flex-col overflow-auto [&::-webkit-scrollbar]:hidden">
+    <div className="w-full h-full flex flex-col overflow-auto [&::-webkit-scrollbar]:hidden mt-10">
       <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-5">
         {/* 1 */}
         <div className="h-[900px] lg:h-[430px] grid grid-cols-1 lg:grid-cols-2 gap-3">
@@ -164,7 +164,7 @@ const Ecommerce = () => {
         </div>
         {/* 5 */}
         <div className="w-full  h-[430px] lg:col-span-2">
-          <div className="bg-white shadow-md w-full p-4">
+          <div className="bg-white shadow-md w-full p-4 rounded-3xl">
             <div className="relative w-full h-[300px] md:h-[400px]">
               {" "}
               <Line data={data} options={options} />
