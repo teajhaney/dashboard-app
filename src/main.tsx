@@ -4,13 +4,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.tsx";
 import { DashboardProvider } from "./provider/DasboardProvider.tsx";
 import {
-  Project,
   NotFoundPage,
   Ecommerce,
   BasicTable,
   DataTable,
   LineChart,
-
   BarChart,
   PieChart,
 } from "./pages/export_pages.tsx";
@@ -20,11 +18,8 @@ const router = createBrowserRouter([
   {
     element: <App />,
     children: [
-      { path: "/", element: <Project />, errorElement: <NotFoundPage /> },
-      {
-        path: "/Ecommerce",
-        element: <Ecommerce />,
-      },
+      { path: "/", element: <Ecommerce />, errorElement: <NotFoundPage /> },
+
       {
         path: "/basic-table",
         element: <BasicTable />,
@@ -38,7 +33,6 @@ const router = createBrowserRouter([
         element: <LineChart />,
       },
 
-   
       {
         path: "/bar-chart",
         element: <BarChart />,

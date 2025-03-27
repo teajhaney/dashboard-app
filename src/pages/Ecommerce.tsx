@@ -55,9 +55,9 @@ const EcommercePage = () => {
         </div>
 
         {/* 5 */}
-        <div className=" h-[900px] lg:h-[430px] grid grid-cols-1 lg:grid-cols-2 gap-5">
+        <div className=" h-[900px] lg:h-[430px] grid grid-cols-1 lg:grid-cols-2 gap-5 ">
           {SalesByCountries.map((SalesByCountry) => (
-            <div className="border border-gray/20 rounded-lg bg-white flex flex-col gap-3 p-5">
+            <div className="border border-gray/20 rounded-lg bg-white flex flex-col gap-3 p-5 max-lg:items-center">
               <img
                 src={SalesByCountry.countryImg}
                 alt={SalesByCountry.country}
@@ -72,7 +72,7 @@ const EcommercePage = () => {
           ))}
         </div>
         {/* 6 */}
-        <div className="rounded-3xl h-[900px] lg:h-[430px] flex flex-col justify-center gap-2 p-5 bg-white ">
+        <div className="rounded-3xl h-[430px] flex flex-col justify-center gap-2 p-5 bg-white ">
           <div className="flex justify-center">
             {" "}
             <img
@@ -102,9 +102,8 @@ const EcommercePage = () => {
           </div>
         </div>
         {/* 2 */}
-        <div className="bg-blue-500  h-[900px] lg:h-[430px]"></div>
-        {/* 3*/}
-        <div className="bg-pink-500  h-[900px] lg:h-[430px]"></div>
+        <div className="bg-blue-500  h-[430px] lg:col-span-2"></div>
+  
       </div>
     </div>
   );
