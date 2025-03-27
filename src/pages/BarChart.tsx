@@ -112,13 +112,13 @@ const BarChart = () => {
         </NavLink>
       </h1>
       <div className="flex flex-col  gap-5   items-center justify-center">
-        <div className="bg-white shadow-md w-full max-w-xl lg:max-w-4xl p-4">
+        <div className="bg-white shadow-md w-full max-w-xl lg:max-w-4xl  p-4">
           <div className="relative w-full h-[300px] md:h-[400px]">
             <Bar data={data} options={options} />
           </div>
         </div>
-        <div className="bg-white shadow-md w-full max-w-xl lg:max-w-4xl p-4">
-          <div className="relative w-full h-[300px] md:h-[400px] flex">
+        <div className="bg-white shadow-md w-full max-w-xl lg:max-w-4xl  p-4">
+          <div className="relative w-full h-[300px] md:h-[400px]">
             <Bar data={dataY} options={optionsY} />
           </div>
         </div>

@@ -69,7 +69,7 @@ const BasicTable = () => {
     "px-6 py-3 text-left text-sm font-medium text-textColor";
   const tBodyStyles: string = "px-6 py-4 text-sm text-gray";
   return (
-    <div className="p-5 flex flex-col gap-5">
+    <div className="min-h-screen flex flex-col p-5 gap-5">
       <div className="flex flex-col gap-2">
         <h1 className="text-textColor text-xl">Basic Table</h1>
         <h1 className="text-gray/50 text-sm">
@@ -95,9 +95,9 @@ const BasicTable = () => {
           />
         </div>
       </div>
-      <div className="overflow-x-auto ">
+      <div className="overflow-y-auto ">
         {displayedCustomer.length === 0 ? (
-          <div className="flex justify-center">
+          <div className=" justify-center">
             {" "}
             <h1 className="text-center text-primary">No data available</h1>
           </div>

@@ -72,7 +72,7 @@ const DataTable = () => {
     "px-6 py-3 text-left text-sm font-bold text-textColor";
   const tBodyStyles: string = "px-6 py-4 text-[16px] text-gray";
   return (
-    <div className="p-5 flex flex-col gap-5">
+    <div className="min-h-screen flex flex-col p-5 gap-5">
       <div className="flex flex-col gap-2">
         <h1 className="text-textColor text-xl">Data Table</h1>
         <h1 className="text-gray/50 text-sm">
@@ -98,7 +98,7 @@ const DataTable = () => {
           />
         </div>
       </div>
-      <div className="overflow-x-auto bg-bgColor rounded-lg py-10  ">
+      <div className="overflow-y-auto bg-bgColor rounded-lg py-10  ">
         <div className="px-6 text-xl">Default Data table</div>
         {displayedStaff.length === 0 ? (
           <div className="flex justify-center">
