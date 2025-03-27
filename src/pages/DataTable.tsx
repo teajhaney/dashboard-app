@@ -98,15 +98,15 @@ const DataTable = () => {
           />
         </div>
       </div>
-      <div className="overflow-y-auto bg-bgColor rounded-lg py-10  ">
-        <div className="px-6 text-xl">Default Data table</div>
+      <div className="overflow-y-auto bg-bgColor rounded-lg py-5  ">
+      
         {displayedStaff.length === 0 ? (
           <div className="flex justify-center">
             {" "}
             <h1 className="text-center text-primary">No data available</h1>
           </div>
         ) : (
-          <table className="w-full ">
+          <table className="lg:w-full ">
             {/* table head */}
             <thead>
               <tr className="border-b border-gray-300 hover:bg-gray-100 transition-all">
@@ -142,13 +142,13 @@ const DataTable = () => {
                       {" "}
                       <CiEdit
                         onClick={() => handleEdit(staff)}
-                        className="text-lightBlue text-xl hover:text-darkBlue "
+                        className="text-lightBlue text-sm hover:text-darkBlue "
                       />
                     </div>
                     <div className="bg-red-100 p-2 rounded cursor-pointer">
                       <LiaTrashAlt
                         onClick={() => handleDelete(staff.id)}
-                        className="text-lightRed text-xl hover:text-darkRed"
+                        className="text-lightRed text-sm hover:text-darkRed"
                       />
                     </div>
                   </td>

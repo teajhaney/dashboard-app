@@ -95,14 +95,14 @@ const BasicTable = () => {
           />
         </div>
       </div>
-      <div className="overflow-y-auto ">
+      <div className="overflow-y-auto bg-bgColor py-5 lg:w-full">
         {displayedCustomer.length === 0 ? (
           <div className=" justify-center">
             {" "}
             <h1 className="text-center text-primary">No data available</h1>
           </div>
         ) : (
-          <table className="w-full bg-bgColor rounded-lg">
+          <table className="lg:w-full bg-bgColor rounded-lg">
             {/* table head */}
 
             <thead>
